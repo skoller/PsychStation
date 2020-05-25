@@ -17,7 +17,7 @@ class ScalesListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Calculators"),
+        title: Text("Scales"),
       ),
       body: Container(
         child: Column(children: [
