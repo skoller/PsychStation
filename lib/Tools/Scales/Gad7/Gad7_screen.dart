@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class ScalesScreen extends StatelessWidget {
+class Gad7Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Scales"),
+        title: Text("GAD7"),
       ),
       body: Container(
-       child: Text('these are the scales'),
+       child: Text('this is the GAD7'),
       ),
     );
   }

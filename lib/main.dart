@@ -1,8 +1,10 @@
 import './Tools/Tools_screen.dart';
-import './Tools/Calculators/Calulators_screen.dart';
-import './Tools/Calculators/Li_calc_screen.dart';
-import './Tools/Calculators/Benzo_calc_screen.dart';
-import './Tools/Scales/Scales_screen.dart';
+import './Tools/Calculators/Calculators_list_screen.dart';
+import './Tools/Calculators/Lithium_calc/Li_calc_screen.dart';
+import './Tools/Calculators/Benzo_calc/Benzo_calc_screen.dart';
+import './Tools/Scales/Scales_list_screen.dart';
+import './Tools/Scales/Phq9/Phq9_screen.dart';
+import './Tools/Scales/Gad7/Gad7_screen.dart';
 import './Tools/Landmark_Studies/Landmark_studies_screen.dart';
 import './Tools/Clinical_Guides/Clinical_guides_screen.dart';
 import './Tools/Local_Resources/Local_resources_screen.dart';
@@ -43,8 +45,8 @@ class MyApp extends StatelessWidget {
       home: ToolsScreen(),
       routes: {
         '/tools': (cntx) => ToolsScreen(),
-        '/tools/calculators': (cntx) => CalculatorsScreen(),
-        '/tools/scales': (cntx) => ScalesScreen(),
+        '/tools/calculators': (cntx) => CalculatorsListScreen(),
+        '/tools/scales': (cntx) => ScalesListScreen(),
         '/tools/landmark_studies': (cntx) => LandmarkStudiesScreen(),
         '/tools/clinical_guides': (cntx) => ClinicalGuidesScreen(),
         '/tools/local_resources': (cntx) => LocalResourcesScreen(),
@@ -54,6 +56,9 @@ class MyApp extends StatelessWidget {
 
         '/tools/calculators/Li': (cntx) => LiCalcScreen(),
         '/tools/calculators/Benzo': (cntx) => BenzoCalcScreen(),
+
+        '/tools/scales/phq9': (cntx) => Phq9Screen(),
+        '/tools/scales/gad7': (cntx) => Gad7Screen(),
       },
     );
   }
