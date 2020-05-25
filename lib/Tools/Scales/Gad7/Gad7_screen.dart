@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './Gad7_question_quant.dart';
 
 class Gad7Screen extends StatelessWidget {
   @override
@@ -8,8 +9,11 @@ class Gad7Screen extends StatelessWidget {
         title: Text("GAD7"),
       ),
       body: Container(
-       child: Text('this is the GAD7'),
+        child: Column(children: <Widget>[Gad7QuestionQuant()]),
       ),
     );
   }
 }
+
+
+/// Gad7 and Gad7Q models in models folder
