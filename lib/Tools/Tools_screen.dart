@@ -14,7 +14,7 @@ class ToolsScreen extends StatelessWidget {
     },
     {
       'id': 't3',
-      'title': 'Landmark Trials',
+      'title': 'Landmark Studies',
     },
     {
       'id': 't4',
@@ -50,13 +50,6 @@ class ToolsScreen extends StatelessWidget {
         (tools as List<Map<String, String>>).map( (tool) {
           return ToolItem(tool['id'], tool['title']);
         }).toList(),
-            // .map(
-            //   (tool) => Tooltem(
-            //     tool['id'],
-            //     tool['title'],
-            //   ),
-            // )
-            // .toList(),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
           childAspectRatio: 3 / 2,
