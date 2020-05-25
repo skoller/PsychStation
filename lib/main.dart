@@ -1,5 +1,7 @@
 import './Tools/Tools_screen.dart';
 import './Tools/Calculators/Calulators_screen.dart';
+import './Tools/Calculators/Li_calc_screen.dart';
+import './Tools/Calculators/Benzo_calc_screen.dart';
 import './Tools/Scales/Scales_screen.dart';
 import './Tools/Landmark_Studies/Landmark_studies_screen.dart';
 import './Tools/Clinical_Guides/Clinical_guides_screen.dart';
@@ -7,6 +9,7 @@ import './Tools/Local_Resources/Local_resources_screen.dart';
 import './Tools/Medications/Medications_screen.dart';
 import './Tools/DSM_Guide/DSM_guide_screen.dart';
 import './Tools/Primary_Care_For_Psychiatrists/Primary_care_for_psychiatrists_screen.dart';
+
 
 
 import 'package:flutter/material.dart';
@@ -48,6 +51,9 @@ class MyApp extends StatelessWidget {
         '/tools/medications': (cntx) => MedicationsScreen(),
         '/tools/DSM_guide': (cntx) => DSMGuideScreen(),
         '/tools/primary_care_for_psychiatrists': (cntx) => PrimaryCareForPsychiatristsScreen(),
+
+        '/tools/calculators/Li': (cntx) => LiCalcScreen(),
+        '/tools/calculators/Benzo': (cntx) => BenzoCalcScreen(),
       },
     );
   }
