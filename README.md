@@ -35,6 +35,6 @@ The main dart file points to the Tools_screen, file located in /lib/Tools as its
 
 However, models of data that relate to all sections of the application broadly are located in the lib/models folder. Model files are not found within corresponding /lib/Tools/(tool item) folders or elsewhere in the application.
 
-The assets folder contains fonts information used in the application theme set in the main.dart file. The assets also contains folders for various tools in the application where infographics images are used as the predominant content delivery method, as apposed to formatted and themed text rendered by the application. These infographic images are shipped with the application and not stored on a remote server, to enable offline use and improved application performance.
+The assets folder contains fonts, utilized in the theme property located in /lib/main.dart. Assets also contains folders with images required for various tools in the application where infographic images are used as the predominant content delivery method, as apposed to formatted and themed text rendered by the application. These infographic images are shipped with the application and not stored on a remote server, to enable offline use and improve application performance.
 
 # PsychStation
