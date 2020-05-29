@@ -2,20 +2,21 @@ import 'package:flutter/material.dart';
 import './Scales_list_item.dart';
 
 final scales = const [
-    {
-      'id': 's1',
-      'title': 'PHQ9',
-    },
-    {
-      'id': 's2',
-      'title': 'GAD7',
-    },
-  ];
+  {
+    'id': 's1',
+    'title': 'PHQ9',
+  },
+  {
+    'id': 's2',
+    'title': 'GAD7',
+  },
+];
 
 class ScalesListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return
+    Scaffold(
       appBar: AppBar(
         title: Text("Scales"),
       ),
