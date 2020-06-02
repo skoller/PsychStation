@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>538079086353-rq2m3ur44n6jljdqk6jkoj9h1ke7t0nd.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.538079086353-rq2m3ur44n6jljdqk6jkoj9h1ke7t0nd</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCFymESGaAtAVuelOnqOWRj__n2gTJlQvM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>538079086353</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.PsychStation</string>
+	<key>PROJECT_ID</key>
+	<string>psychstation-flutter</string>
+	<key>STORAGE_BUCKET</key>
+	<string>psychstation-flutter.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:538079086353:ios:6081c9c4cf6e64ab73eeb0</string>
+	<key>DATABASE_URL</key>
+	<string>https://psychstation-flutter.firebaseio.com</string>
+</dict>
+</plist>

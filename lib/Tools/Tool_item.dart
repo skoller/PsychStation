@@ -6,9 +6,7 @@ class ToolItem extends StatelessWidget {
 
   ToolItem(this.id, this.title);
 
-
   void selectTool(BuildContext context) {
-
     void navPush(String route, Function args) {
       Navigator.of(context).pushNamed(route, arguments: args);
     }
@@ -66,23 +64,44 @@ class ToolItem extends StatelessWidget {
       splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(15),
       child: Container(
-        padding: const EdgeInsets.all(15),
-        child: Text(
-          title,
-          style: Theme.of(context).textTheme.headline1,
-        ),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Colors.white,
-              Colors.blueGrey,
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+        width: double.infinity,
+        padding: EdgeInsets.all(5),
+        child: Card(
+          margin: EdgeInsets.all(2),
+          child: Container(
+            padding: EdgeInsets.only(top: 10, bottom: 10),
+            child: Text(
+              title,
+              style: Theme.of(context).textTheme.bodyText1,
+              textAlign: TextAlign.center,
+
+               // padding: const EdgeInsets.all(10),
+            ),
           ),
-          borderRadius: BorderRadius.circular(15),
         ),
       ),
     );
   }
 }
+
+// Container(
+//   padding: const EdgeInsets.all(15),
+//   child: Text(
+//     title,
+//     style: Theme.of(context).textTheme.headline1,
+//   ),
+//   decoration: BoxDecoration(
+//     boxShadow: [
+//       BoxShadow(
+//         color: Theme.of(context).primaryColor,
+//         blurRadius: 1.0, // soften the shadow
+//         spreadRadius: 1.0, //extend the shadow
+//         // offset: Offset(
+//         //   15.0, // Move to right 10  horizontally
+//         //   15.0, // Move to bottom 10 Vertically
+//         // ),
+//       ),
+//     ],
+//      borderRadius: BorderRadius.circular(15),
+//   ),
+// ),

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "538079086353",
+    "firebase_url": "https://psychstation-flutter.firebaseio.com",
+    "project_id": "psychstation-flutter",
+    "storage_bucket": "psychstation-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538079086353:android:6e17330328ecb72773eeb0",
+        "android_client_info": {
+          "package_name": "com.example.PsychStation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "538079086353-t4o6pedn2a43nf5t0vbbhslbdbcs8nkj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu9lHo6Ac4sxXy9jNZtqAokhqMFrI9n_c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "538079086353-t4o6pedn2a43nf5t0vbbhslbdbcs8nkj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -41,21 +41,12 @@ class ToolsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Psych Station'),
-      ),
-      body: GridView(
+      body: ListView(
         padding: const EdgeInsets.all(25),
         children:
         (tools as List<Map<String, String>>).map( (tool) {
           return ToolItem(tool['id'], tool['title']);
         }).toList(),
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 200,
-          childAspectRatio: 3 / 2,
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 20,
-        ),
       ),
     );
   }

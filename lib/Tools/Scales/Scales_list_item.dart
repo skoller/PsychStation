@@ -29,20 +29,21 @@ class ScalesListItem extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Container(
-        width: double.infinity,
-        padding: EdgeInsets.only(left: 15, right: 15, top: 15),
-        child: Card(
-          child: InkWell(
-            onTap: () => selectCalc(context, title),
-            child: Container(
-              padding: const EdgeInsets.all(10),
-              child: Text(
-                title,
-                style: Theme.of(context).textTheme.bodyText1,
-                textAlign: TextAlign.center,
-              ),
+      width: double.infinity,
+      padding: EdgeInsets.only(left: 15, right: 15, top: 15),
+      child: Card(
+        child: InkWell(
+          onTap: () => selectCalc(context, title),
+          child: Container(
+            padding: const EdgeInsets.all(10),
+            child: Text(
+              title,
+              style: Theme.of(context).textTheme.bodyText1,
+              textAlign: TextAlign.center,
             ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
