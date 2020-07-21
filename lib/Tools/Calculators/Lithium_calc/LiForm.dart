@@ -24,36 +24,47 @@ class LiFormState extends State<LiForm> {
 
   var _desiredLiSerumLevel;
   var _age;
-  bool _female = true;
+  bool _female = false;
   // unset variable _female once selection on UI implemented
   var _weight;
   var _bun;
   var _cr;
+  var _inpatient = false;
+  var _tcaCoadmin = false;
   var calcd = false;
+
 
   var _zetin_Result = 0.0;
   var _terao_Result = 0.0;
   var _abou_auda_Result = 0.0;
-  var _jermain_Result = 0.0;
   var _pepin_Result = 0.0;
 
   void liDoseCalculate(String li, String age, bool female, String weight,
       String bun, String cr) {
     setState(() {
-      _desiredLiSerumLevel = double.parse(li);
-      _age = double.parse(age);
-      _weight = double.parse(weight);
-      _bun = double.parse(bun);
-      _cr = double.parse(cr);
-      _zetin_Result = 0.0;
+      if (_desiredLiSerumLevel) { _desiredLiSerumLevel = double.parse(li);}
+      if (_age) {_age = double.parse(age);}
+      if (_weight) { _weight = double.parse(weight);}
+      if (_bun) {_bun = double.parse(bun);}
+      if (_cr) { _cr = double.parse(cr);}
+
+    
+
+      if (
+        _weight != null &&
+        _age != null &&
+        _bun != null &&
+        _desiredLiSerumLevel != null) 
+          {_zetin_Result = 0.0;}
+      
       _terao_Result = 0.0;
-      _jermain_Result = 0.0;
       _pepin_Result = 0.0;
 
       if (female) {
         _abou_auda_Result = 382.54 +
             (348.29 * _desiredLiSerumLevel) +
             (67.19 * (((140 - _age) * _weight * 0.85) / (72 * _cr)) * 0.06);
+            print("female");
       } else {
         _abou_auda_Result = 382.54 +
             (348.29 * _desiredLiSerumLevel) +
@@ -85,30 +96,30 @@ class LiFormState extends State<LiForm> {
               // labelStyle: TextStyle(fontWeight: FontWeight.bold),
             ),
             controller: lilevelController,
-            onChanged: (value) {
-              _desiredLiSerumLevel = value;
-              print(_desiredLiSerumLevel);
-            },
+            // onChanged: (value) {
+            //   _desiredLiSerumLevel = value;
+            //   print(_desiredLiSerumLevel);
+            // },
           ),
           TextFormField(
             key: ValueKey('Cr'),
-            validator: (value) {
-              if (value.isEmpty) {
-                return 'Please enter Creatinine.';
-              }
+            // validator: (value) {
+            //   if (value.isEmpty) {
+            //     return 'Please enter Creatinine.';
+            //   }
 
-              return null;
-            },
+            //   return null;
+            // },
             keyboardType: TextInputType.number,
             decoration: InputDecoration(
               labelText: "  Cr:",
               // labelStyle: TextStyle(fontWeight: FontWeight.bold),
             ),
             controller: crController,
-            onChanged: (value) {
-              _cr = value;
-              print(_cr);
-            },
+            // onChanged: (value) {
+            //   _cr = value;
+            //   print(_cr);
+            // },
           ),
           TextFormField(
             key: ValueKey('Age'),
@@ -125,19 +136,19 @@ class LiFormState extends State<LiForm> {
               // labelStyle: TextStyle(fontWeight: FontWeight.bold),
             ),
             controller: ageController,
-            onChanged: (value) {
-              _age = value;
-              print(_age);
-            },
+            // onChanged: (value) {
+            //   _age = value;
+            //   print(_age);
+            // },
           ),
           TextFormField(
             key: ValueKey('Weight'),
-            // validator: (value) {
-            //   if (value.isEmpty || !value.contains('@')) {
-            //     return 'Please enter a valid email address.';
-            //   }
-            //   return null;
-            // },
+            validator: (value) {
+              if (value.isEmpty) {
+                return 'Please enter weight.';
+              }
+              return null;
+            },
             keyboardType: TextInputType.number,
             decoration: InputDecoration(
               labelText: "  Weight (kg):",
@@ -161,6 +172,45 @@ class LiFormState extends State<LiForm> {
             //     _bun = value;
             //     print(_bun);
             //   },
+          ),
+          Container(
+            padding: EdgeInsets.only(right: 100),
+            child: CheckboxListTile(
+                key: ValueKey('sex'),
+                title: const Text('Female'),
+                value: _female,
+                onChanged: (val) {
+                  setState(() {
+                     _female = val;
+                  });
+                  print(_female);
+                }),
+          ),
+          Container(
+            padding: EdgeInsets.only(right: 100),
+            child: CheckboxListTile(
+                key: ValueKey('Inpt'),
+                title: const Text('Inpatient'),
+                value: _inpatient,
+                onChanged: (val) {
+                  setState(() {
+                     _inpatient = val;
+                  });
+                   print(_inpatient);
+                }),
+          ),
+          Container(
+            padding: EdgeInsets.only(right: 100),
+            child: CheckboxListTile(
+                key: ValueKey('tca'),
+                title: const Text('TCA Co-administration'),
+                value: _tcaCoadmin,
+                onChanged: (val) {
+                  setState(() {
+                     _tcaCoadmin = val;
+                  });
+                  print(_tcaCoadmin);
+                }),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -194,8 +244,6 @@ class LiFormState extends State<LiForm> {
                       "Zetin et al: ${(calcd == true) ? (_zetin_Result.toStringAsFixed(0) + " mg/day") : " "}"),
                   Text(
                       "Terao et al: ${(calcd == true) ? (_terao_Result.toStringAsFixed(0) + " mg/day") : " "}"),
-                  Text(
-                      "Jermain et al: ${(calcd == true) ? (_jermain_Result.toStringAsFixed(0) + " mg/day") : " "}"),
                   Text(
                       "Pepin et al: ${(calcd == true) ? (_pepin_Result.toStringAsFixed(0) + " mg/day") : " "}"),
                   Text(
