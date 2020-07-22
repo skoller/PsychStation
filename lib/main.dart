@@ -43,13 +43,14 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Raleway',
           textTheme: ThemeData.light().textTheme.copyWith(
                 bodyText1: TextStyle(
+                  fontSize: 20,
                   color: Color.fromRGBO(20, 51, 51, 1),
                 ),
                 bodyText2: TextStyle(
                   color: Color.fromRGBO(20, 51, 51, 1),
                 ),
                 headline1: TextStyle(
-                  fontSize: 20,
+                  fontSize: 25,
                   fontFamily: 'RobotoCondensed',
                   fontWeight: FontWeight.bold,
                 ),
@@ -71,6 +72,8 @@ class MyApp extends StatelessWidget {
           '/tools/calculators/Benzo': (cntx) => BenzoCalcScreen(),
           '/tools/scales/phq9': (cntx) => Phq9Screen(),
           '/tools/scales/gad7': (cntx) => Gad7Screen(),
+
+          StudyInfographicPage.routeName: (cntx) => StudyInfographicPage()
         },
       ),
     );
