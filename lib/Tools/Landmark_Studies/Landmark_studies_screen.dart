@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class LandmarkStudiesScreen extends StatelessWidget {
 
-final studies = [ StudyInfographic("0", "Star*D Summary", "1.0", "6/21/2020") ];
+final studies = [ StudyInfographic("0", "Star*D Summary", "1.0", "6/21/2020", AssetImage('lib/assets/images/StudyImage_StepBD.png')) ];
 
   @override
   Widget build(BuildContext context) {
@@ -10,16 +10,16 @@ final studies = [ StudyInfographic("0", "Star*D Summary", "1.0", "6/21/2020") ];
       appBar: AppBar(
         title: Text("Landmark Studies"),
       ),
-      body: 
+      body: SingleChildScrollView(child: FlatButton(child: Text("Study1"), onPressed: () {
+          Navigator.pushNamed(context, StudyInfographicPage.routeName, arguments: studies[0]);
+        },),)
       // ListView(
       //   padding: const EdgeInsets.all(25),
       //   children:
       //   (tools as List<Map<String, String>>).map( (tool) {
       //     return ToolItem(tool['id'], tool['title']);
       //   }).toList(),
-        RaisedButton(child: Text("Study1"), onPressed: () {
-          Navigator.pushNamed(context, StudyInfographicPage.routeName, arguments: studies[0]);
-        },),
+        
       );
   }
 }
@@ -31,9 +31,9 @@ class StudyInfographic {
   final String title;
   final String version;
   final String lastUpdateDate;
-  // final Image image;
+  final AssetImage image;
 
-  StudyInfographic(this.id, this.title, this.version, this.lastUpdateDate);
+  StudyInfographic(this.id, this.title, this.version, this.lastUpdateDate, this.image);
 }
 
 
@@ -51,8 +51,13 @@ class StudyInfographicPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(studyArgs.title),
       ),
-      body: Center(child: 
-              Text(studyArgs.id),
+      body: GestureDetector(
+              child: Container(
+                width: double.infinity,
+                child: SingleChildScrollView(child: 
+               Image(image: studyArgs.image))
+          
+        ),
       ),
     );
   }
