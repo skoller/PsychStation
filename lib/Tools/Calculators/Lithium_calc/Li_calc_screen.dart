@@ -29,7 +29,7 @@ class _LiCalcScreenState extends State<LiCalcScreen> {
       appBar: AppBar(
         title: Text("Lithium Dose Calculator"),
       ),
-      body: Container(
+      body: SingleChildScrollView(
         child: LiForm())
     );
   }

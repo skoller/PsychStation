@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class LiForm extends StatefulWidget {
   @override
@@ -21,35 +22,52 @@ class LiFormState extends State<LiForm> {
   final bunController = TextEditingController();
   final crController = TextEditingController();
   final lilevelController = TextEditingController();
+  final heightController = TextEditingController();
 
   var _desiredLiSerumLevel;
   var _age;
   bool _female = false;
-  // unset variable _female once selection on UI implemented
-  var _weight;
+  var _weight; //kg
   var _bun;
   var _cr;
   var _inpatient = false;
   var _tcaCoadmin = false;
   var calcd = false;
+  double _ideal_body_weight = 0.0;
+  double _lean_body_weight = 0.0;
+  var _height; // cm
+
+  var cr_clearance;
+  var li_clearance;
 
 
-  var _zetin_Result = 0.0;
+  var _zetin_Result = e * 0.0;
   var _terao_Result = 0.0;
   var _abou_auda_Result = 0.0;
   var _pepin_Result = 0.0;
 
   void liDoseCalculate(String li, String age, bool female, String weight,
-      String bun, String cr) {
+      String bun, String cr, String height) {
     setState(() {
       if (_desiredLiSerumLevel) { _desiredLiSerumLevel = double.parse(li);}
-      if (_age) {_age = double.parse(age);}
+      if (_age) { _age = double.parse(age);}
       if (_weight) { _weight = double.parse(weight);}
-      if (_bun) {_bun = double.parse(bun);}
+      if (_height) { _height = double.parse(weight);}
+      if (_bun) { _bun = double.parse(bun);}
       if (_cr) { _cr = double.parse(cr);}
+      if (female && _height) { _ideal_body_weight = (45.5+(0.91*(_height-152.4)));}
+      if ((female == false) && _height) { _ideal_body_weight = (50+(0.91*(_height-152.4))); }
+      if (_female && _height && _age && _cr) {cr_clearance = (((140 - _age) * _weight * 0.85) / (72 * _cr));}
+      if ((_female == false) && _height && _age && _cr) {cr_clearance = (((140 - _age) * _weight) / (72 * _cr));}
+      if (female && _height) { _lean_body_weight = ((0.29569*_weight) + (0.41813*_height) - 43.2933);}
+      if ((female == false) && _height) { _lean_body_weight = ((0.32810*_weight) + (0.33929*_height) - 29.5336);}
+      if (_height &&  _weight && cr_clearance) {li_clearance = (0.0093*_lean_body_weight)+(0.0885*cr_clearance*0.06);}
 
-    
+     
 
+
+
+//calc zetin below
       if (
         _weight != null &&
         _age != null &&
@@ -160,6 +178,25 @@ class LiFormState extends State<LiForm> {
             //     print(_weight);
             //   },
           ),
+            TextFormField(
+            key: ValueKey('Height'),
+            validator: (value) {
+              if (value.isEmpty) {
+                return 'Please enter height.';
+              }
+              return null;
+            },
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(
+              labelText: "  Height (cm):",
+              // labelStyle: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            controller: heightController,
+            // onChanged: (value) {
+            //     _weight = value;
+            //     print(_weight);
+            //   },
+          ),
           TextFormField(
             key: ValueKey('Bun'),
             keyboardType: TextInputType.number,
@@ -227,7 +264,8 @@ class LiFormState extends State<LiForm> {
                       _female,
                       weightController.text,
                       bunController.text,
-                      crController.text);
+                      crController.text,
+                      heightController.text);
                   // If the form is valid, display a Snackbar.
                   // Scaffold.of(context)
                   //     .showSnackBar(SnackBar(content: Text('Processing Data')));
@@ -236,7 +274,9 @@ class LiFormState extends State<LiForm> {
               child: Text('Calculate'),
             ),
           ),
-          Card(
+          Container(
+            width: double.infinity,
+            alignment: Alignment.topCenter,
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -249,7 +289,8 @@ class LiFormState extends State<LiForm> {
                   Text(
                       "Abou-Auda et al: ${(calcd == true) ? (_abou_auda_Result.toStringAsFixed(1) + " mg/day") : " "}")
                 ]),
-          )
+          ),
+          SizedBox(height: 50, width: double.infinity)
         ],
       ),
     );
