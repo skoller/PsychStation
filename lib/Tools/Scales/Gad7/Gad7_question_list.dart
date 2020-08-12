@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './Gad7_question_quant.dart';
-import 'package:flutter_complete_guide/models/Gad7.dart';
+import 'package:flutter_complete_guide/models/Gad7_model.dart';
 import 'package:provider/provider.dart';
 
 
@@ -10,7 +10,7 @@ Gad7QuestionList();
 
   @override
   Widget build(BuildContext context) {
-    final gad7current = Provider.of<Gad7>(context);
+    final gad7current = Provider.of<Gad7model>(context);
     return 
     Expanded(
       flex: 1,

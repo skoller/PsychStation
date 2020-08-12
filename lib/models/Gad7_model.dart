@@ -1,14 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Gad7 with ChangeNotifier {
-  // List<Gad7Item> _items = [];
-
-  // List<Gad7Item> get items {
-  //   return [..._items];
-  // }
-
-// void updateGad7ItemScore
-
+class Gad7model with ChangeNotifier {
+ 
   List<String> _questions = [
     "Feeling nervous, anxious, or on edge",
     "Not being able to stop or control worrying",

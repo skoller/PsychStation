@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_complete_guide/models/Gad7.dart';
+import 'package:flutter_complete_guide/models/Gad7_model.dart';
 import 'package:provider/provider.dart';
 
 class Gad7QuestionQuant extends StatelessWidget {
@@ -19,7 +19,7 @@ class Gad7QuestionQuant extends StatelessWidget {
 
 
   Widget build(BuildContext context) {
-    final gad7pnt = Provider.of<Gad7>(context);
+    final gad7pnt = Provider.of<Gad7model>(context);
     final gad7 = gad7pnt.questionScores;
     final gad7Qs = gad7pnt.questions;
    List<int> _updateQs(qI, gVal) {

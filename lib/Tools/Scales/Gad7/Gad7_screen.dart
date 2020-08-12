@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 // import './Gad7_question_quant.dart';
 import './Gad7_question_list.dart';
-import 'package:flutter_complete_guide/models/Gad7.dart';
+import 'package:flutter_complete_guide/models/Gad7_model.dart';
 import 'package:provider/provider.dart';
 
 class Gad7Screen extends StatelessWidget {
@@ -18,7 +18,7 @@ class Gad7Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final gad7current = Provider.of<Gad7>(context);
+    final gad7current = Provider.of<Gad7model>(context);
     final totScore = gad7current.totalScore;
     int _score() {
       return gad7current.updateTotalScore();

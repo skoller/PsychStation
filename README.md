@@ -38,3 +38,8 @@ However, models of data that relate to all sections of the application broadly a
 The assets folder contains fonts, utilized in the theme property located in /lib/main.dart. Assets also contains folders with images required for various tools in the application where infographic images are used as the predominant content delivery method, as apposed to formatted and themed text rendered by the application. These infographic images are shipped with the application and not stored on a remote server, to enable offline use and improve application performance.
 
 # PsychStation
+
+// ideas for later:
+getwidget package: library of 1000+ prebuilt widgets
+moor_db_viewer
+

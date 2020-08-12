@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_complete_guide/Patients/PatientsHomeScreen.dart';
 import 'package:flutter_complete_guide/Tools/Tools_screen.dart';
 import './Patients/PatientsHomeScreen.dart';
+import './Patients/PatientList.dart';
+import './Patients/PatientsScreen.dart';
 import './Account/AccountScreen.dart';
 import './Patients/auth_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -29,7 +30,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
           stream: FirebaseAuth.instance.onAuthStateChanged,
           builder: (context, userSnapshot) {
             if (userSnapshot.hasData) {
-              return PatientsHomeScreen();
+              return PatientList();
             }
             ;
             return AuthScreen();
