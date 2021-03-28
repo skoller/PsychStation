@@ -25,7 +25,7 @@ class AccountScreen extends StatelessWidget {
               buildListTitle("Specialty:", "IM-Psychiatry"),
               buildListTitle("Level of Training:", "Resident"),
               buildListTitle("Location of Practice:", "GA, USA"),
-              RaisedButton.icon(onPressed: () {}, icon: Icon(Icons.edit), label: Text("Edit"))
+              ElevatedButton.icon(onPressed: () {}, icon: Icon(Icons.edit), label: Text("Edit"))
             ],
           ),
         ),

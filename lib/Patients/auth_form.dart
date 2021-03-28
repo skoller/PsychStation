@@ -103,14 +103,14 @@ class _AuthFormState extends State<AuthForm> {
                   SizedBox(height: 12),
                   if (widget.isLoading) CircularProgressIndicator(),
                   if (!widget.isLoading)
-                    RaisedButton(
-                      textColor: Colors.white,
+                    ElevatedButton(
+                      // style: ,
                       child: Text(_isLogin ? "Login" : 'Signup'),
                       onPressed: _trySubmit,
                     ),
                   if (!widget.isLoading)
-                    FlatButton(
-                      textColor: Theme.of(context).primaryColor,
+                    ElevatedButton(
+                      // textColor: Theme.of(context).primaryColor,
                       child: Text(_isLogin
                           ? "Create New Account"
                           : 'I already have an Account.'),

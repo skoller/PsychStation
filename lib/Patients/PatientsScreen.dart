@@ -77,10 +77,5 @@ class _PatientsScreenState extends State<PatientsScreen> {
       ),
     );
     
-    @override
-    void dispose() {
-      Hive.close();
-        super.dispose();
-    }
   }
 }

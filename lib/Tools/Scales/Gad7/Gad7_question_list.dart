@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './Gad7_question_quant.dart';
-import 'package:flutter_complete_guide/models/Gad7_model.dart';
+import 'package:psychstation_application/models/Gad7_model.dart';
 import 'package:provider/provider.dart';
 
 

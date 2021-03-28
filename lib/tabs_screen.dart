@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_complete_guide/Tools/Tools_screen.dart';
-import './Patients/PatientsHomeScreen.dart';
+import 'package:psychstation_application/Tools/Tools_screen.dart';
+// import './Patients/PatientsHomeScreen.dart';
 import './Patients/PatientList.dart';
-import './Patients/PatientsScreen.dart';
+// import './Patients/PatientsScreen.dart';
 import './Account/AccountScreen.dart';
 import './Patients/auth_screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import './MainDrawer.dart';
 
 class TabBarScreen extends StatefulWidget {
@@ -27,13 +27,12 @@ class _TabBarScreenState extends State<TabBarScreen> {
     {"page": ToolsScreen(), "title": "Tools"},
     {
       "page": StreamBuilder(
-          stream: FirebaseAuth.instance.onAuthStateChanged,
+          // stream: FirebaseAuth.instance.onAuthStateChanged,
           builder: (context, userSnapshot) {
             if (userSnapshot.hasData) {
               return PatientList();
             }
-            ;
-            return AuthScreen();
+            // return AuthScreen();
           }),
       "title": ""
     },
@@ -60,11 +59,11 @@ class _TabBarScreenState extends State<TabBarScreen> {
         onTap: _selectPage,
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.category), title: Text("Tools")),
+              icon: Icon(Icons.category), label: "Tools"),
+          // BottomNavigationBarItem(
+          //     icon: Icon(Icons.group), title: Text("Patients")),
           BottomNavigationBarItem(
-              icon: Icon(Icons.group), title: Text("Patients")),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.settings), title: Text("Account")),
+              icon: Icon(Icons.settings), label: "Account"),
         ],
       ),
     );

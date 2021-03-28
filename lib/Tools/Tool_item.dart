@@ -42,9 +42,9 @@ class ToolItem extends StatelessWidget {
           navPush('/tools/medications', (_) {});
         }
         break;
-      case 'DSM Guide':
+      case 'DSM':
         {
-          navPush('/tools/DSM_guide', (_) {});
+          navPush('/tools/DSM', (_) {});
         }
         break;
       case 'Primary Care for Psychiatrists':
@@ -66,6 +66,10 @@ class ToolItem extends StatelessWidget {
       child: Container(
         width: double.infinity,
         padding: EdgeInsets.all(5),
+        // child: Text(
+        //   title, style: Theme.of(context).textTheme.bodyText1,
+        //   textAlign: TextAlign.center,
+        // )
         child: Card(
           margin: EdgeInsets.all(2),
           child: Container(

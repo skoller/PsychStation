@@ -28,8 +28,8 @@ class LiFormState extends State<LiForm> {
   var _age;
   bool _female = false;
   var _weight; //kg
-  double _ideal_body_weight = 0.0; //kg
-  double _lean_body_weight = 0.0; //kg
+  double _ideal_body_weight; //kg
+  double _lean_body_weight; //kg
   var _lbUnit = false;
   var _bun;
   var _cr;

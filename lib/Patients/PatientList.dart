@@ -100,18 +100,18 @@ class _PatientListState extends State<PatientList> {
                       onTap: (){
                         showDialog(
                             context: context,
-                            child: Dialog(
+                            builder: (BuildContext context) => Dialog(
                                 child: Container(
                                   padding: EdgeInsets.all(16),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: <Widget>[
 
-                                      FlatButton(
+                                      ElevatedButton(
                                         child: Text("Mark as archived"),
                                         onPressed: () {
                                           PatientModel mPt = PatientModel(
-                                              0,
+                                              key,
                                               pt.name,
                                               pt.detail,
                                               true
@@ -143,7 +143,8 @@ class _PatientListState extends State<PatientList> {
         onPressed: (){
           showDialog(
               context: context,
-              child: Dialog(
+              builder: (BuildContext context) =>
+              Dialog(
                   child: Container(
                     padding: EdgeInsets.all(16),
                     child: Column(
@@ -163,7 +164,7 @@ class _PatientListState extends State<PatientList> {
                         SizedBox(
                           height: 8,
                         ),
-                        FlatButton(
+                        ElevatedButton(
                           child: Text("Add Patient"),
                           onPressed: () {
                             ///Todo : Add Pt in hive

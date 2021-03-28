@@ -1,5 +1,5 @@
-name: flutter_complete_guide
-description: A new Flutter project.
+name: psychstation_application
+description: A project for mental health providers.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -19,24 +19,29 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  provider: ^4.0.0
-  hive: ^1.4.3
-  hive_flutter: ^0.3.1
-  path_provider: ^1.6.5
+  provider: ^5.0.0
+  hive: ^2.0.1
+  hive_flutter: 
+  path_provider: ^2.0.01
   path:
   flutter_slidable: ^0.5.5
-  cupertino_icons: ^0.1.2
-  cloud_firestore: ^0.13.6
-  firebase_auth: ^0.16.1
+  cupertino_icons: ^1.0.2
+  # cloud_firestore: ^0.16.0+1
+  # firebase_auth: ^0.20.1
+  webview_flutter: 
+  twilio_flutter:
+  flutter_inappwebview: ^5.3.0
+  http: ^0.12.1
   # moor: ^3.1.0
   # moor_ffi: ^0.7.0
   # sqflite: ^1.0.0
+  amplify_core: '<1.0.0'
   
   
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  hive_generator: ^0.7.1
+  hive_generator: ^1.0.1
   build_runner: ^1.10.1
  
 

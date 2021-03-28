@@ -30,7 +30,7 @@ class ToolsScreen extends StatelessWidget {
     },
     {
       'id': 't7',
-      'title': 'DSM Guide',
+      'title': 'DSM',
     },
     {
       'id': 't8',
@@ -44,7 +44,7 @@ class ToolsScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(25),
         children:
-        (tools as List<Map<String, String>>).map( (tool) {
+        (tools).map( (tool) {
           return ToolItem(tool['id'], tool['title']);
         }).toList(),
       ),
