@@ -22,7 +22,7 @@ import 'package:psychstation_application/models/Gad7_model.dart';
 
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
+// import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
 
 
@@ -32,9 +32,9 @@ void main() async {
  
   runApp(MyApp());
   final appDocumentDirectory = await path_provider.getApplicationDocumentsDirectory();
-  Hive.init(appDocumentDirectory.path);
-  Hive.registerAdapter(PatientModelAdapter());
-  await Hive.openBox<PatientModel>('patients');
+  // Hive.init(appDocumentDirectory.path);
+  // Hive.registerAdapter(PatientModelAdapter());
+  // await Hive.openBox<PatientModel>('patients');
   }
 
 class MyApp extends StatelessWidget {

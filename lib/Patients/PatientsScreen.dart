@@ -51,31 +51,31 @@
 
 // }
 
-import "package:flutter/material.dart";
-import "package:hive/hive.dart";
-import './PatientList.dart';
+// import "package:flutter/material.dart";
+// import "package:hive/hive.dart";
+// import './PatientList.dart';
 
-class PatientsScreen extends StatefulWidget {
-  @override
-  _PatientsScreenState createState() => _PatientsScreenState();
-}
+// class PatientsScreen extends StatefulWidget {
+//   @override
+//   _PatientsScreenState createState() => _PatientsScreenState();
+// }
 
-class _PatientsScreenState extends State<PatientsScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: FutureBuilder(future: Hive.openBox('patients'), 
-      builder: (BuildContext context, AsyncSnapshot snapshot) {
-        if (snapshot.connectionState == ConnectionState.done) {
-          if (snapshot.hasError)
-            return Text(snapshot.error.toString());
-          else {}
-            return PatientList();
-        } else
-          return Scaffold();
-        },
-      ),
-    );
+// class _PatientsScreenState extends State<PatientsScreen> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       child: FutureBuilder(future: Hive.openBox('patients'), 
+//       builder: (BuildContext context, AsyncSnapshot snapshot) {
+//         if (snapshot.connectionState == ConnectionState.done) {
+//           if (snapshot.hasError)
+//             return Text(snapshot.error.toString());
+//           else {}
+//             return PatientList();
+//         } else
+//           return Scaffold();
+//         },
+//       ),
+//     );
     
-  }
-}
+//   }
+// }

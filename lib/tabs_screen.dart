@@ -30,7 +30,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
           // stream: FirebaseAuth.instance.onAuthStateChanged,
           builder: (context, userSnapshot) {
             if (userSnapshot.hasData) {
-              return PatientList();
+              // return PatientList();
             }
             // return AuthScreen();
           }),
